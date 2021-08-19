@@ -2,12 +2,12 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 EXPOSE 80
 WORKDIR /app
 
-COPY ["/WebAppSolution.sln", "./"]
+COPY ["/kub-proxy.sln", "./"]
 COPY ["/WebApp.Api/WebApp.Api.csproj", "WebApp.Api/"]
 COPY ["/WebApp.BL/WebApp.BL.csproj", "WebApp.BL/"]
 COPY ["/WebApp.DAL/WebApp.DAL.csproj", "WebApp.DAL/"]
 
-RUN dotnet restore WebAppSolution.sln
+RUN dotnet restore kub-proxy.sln
 
 COPY ["WebApp.Api/", "./WebApp.Api/"]
 COPY ["WebApp.BL/", "./WebApp.BL/"]
