@@ -17,5 +17,11 @@ namespace WebApp.Api.Controllers
 		{
 			return Ok("Is working");
 		}
+
+		[HttpGet("GetStatus")]
+		public async Task<IActionResult> GetStatus()
+		{
+			return Ok("Kuber-proxy is working");
+		}
 	}
 }
